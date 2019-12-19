@@ -1,3 +1,0 @@
-
-Musixmatch lyrics API:
-https://developer.musixmatch.com/documentation
