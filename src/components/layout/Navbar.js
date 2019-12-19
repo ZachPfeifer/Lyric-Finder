@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-dark bg-dark mb-5 sticky-top">
       <Link
-        to="/"
+        to="https://zachpfeifer.github.io/Lyric-Finder/"
         className="btn btn-dark btn-sm"
       >
         <i className="fas fa-home fa-2x"
