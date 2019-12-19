@@ -7,14 +7,14 @@ import axios from "axios";
 const Context = React.createContext();
 
 
-//REDUX
+//REDUXish
 const reducer = (state, action) => {
   switch (action.type) {
     case 'SEARCH_TRACKS':
       return {
         ...state,
         track_list: action.payload,
-        heading: "Search Results"
+        heading: "Search Results...",
       }
     default:
       return state

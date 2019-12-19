@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Consumer } from '../../context'
 
-class Search extends Component {
+class SearchByLyrics extends Component {
   state = {
-    trackTitle: '',
+    typedLyrics: '',
   }
 
 
@@ -16,7 +16,7 @@ class Search extends Component {
     e.preventDefault();
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${this.state.trackTitle}&page_size=10&page=1&s_track_rating=desc&apikey=${
+        `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=${this.state.typedLyrics}&page_size=10&page=1&s_track_rating=desc&apikey=${
         process.env.REACT_APP_MM_KEY}`
       )
       .then(res => {
@@ -25,7 +25,7 @@ class Search extends Component {
           type: 'SEARCH_TRACKS',
           payload: res.data.message.body.track_list
         })
-        this.setState({ trackTitle: '' })
+        this.setState({ typedLyrics: '' })
       })
       .catch(err => {
         console.log(err)
@@ -41,16 +41,16 @@ class Search extends Component {
           return (
             <div className="card card-body mb-4 p-4">
               <h1 className="display-4 text-center">
-                <i className="fas fa-music"></i>Search For a Song
+                <i className="fas fa-music mr-4"></i>Search For a Song By Lyrics
             </h1>
-              <p className="lead text-center">Get the Lyrics for any Song</p>
+              <p className="lead text-center">Get the Songs by any Lyrics</p>
               <form onSubmit={this.findTrack.bind(this, dispatch)}>
                 <div className="form-group">
                   <input type="text"
                     className="form-control form-control-lg"
-                    placeholder="Search by Song Title..."
-                    name="trackTitle" //FOR ONCHANGE
-                    value={this.state.trackTitle}
+                    placeholder="Search by Lyrics..."
+                    name="typedLyrics" //FOR ONCHANGE
+                    value={this.state.typedLyrics}
                     onChange={this.onChange}
                   />
                 </div>
@@ -64,4 +64,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default SearchByLyrics;
