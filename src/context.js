@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 
+// @ts-ignore
 const Context = React.createContext();
 
 

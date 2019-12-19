@@ -20,7 +20,7 @@ class Search extends Component {
         process.env.REACT_APP_MM_KEY}`
       )
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         dispatch({
           type: 'SEARCH_TRACKS',
           payload: res.data.message.body.track_list
