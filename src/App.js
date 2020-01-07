@@ -17,7 +17,7 @@ class App extends Component {
             <NavBar />
             <div className="container">
               <Switch>
-                <Route exact path="/" component={Index} />
+                <Route exact path="/music" component={Index} />
                 <Route exact path="/lyrics/track/:id" component={Lyrics} />
 
               </Switch>
