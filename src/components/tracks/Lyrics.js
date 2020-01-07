@@ -51,7 +51,7 @@ class Lyrics extends Component {
         // <h1>HELLO FROM ELSE</h1>
         <React.Fragment>
           <Link
-            to="/music"
+            to="/Lyric-Finder/"
             className="btn btn-dark btn-sm mb-4">
             <i className="fas fa-chevron-left"></i>            Back
             </Link>
