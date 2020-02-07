@@ -30,13 +30,13 @@ export class Provider extends Component {
   };
 
   componentDidMount() {
+
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?page=1&page_size=10&country=us&f_has_lyrics=1&apikey=${
-        process.env.REACT_APP_MM_KEY}`
+        `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?page=1&page_size=10&country=us&f_has_lyrics=1&apikey=bc90c53f62953a25b4f33695e7328435`
       )
       .then(res => {
-        // console.log(res.data)
+        console.log(res.data)
         this.setState({ track_list: res.data.message.body.track_list })
       })
       .catch(err => {
