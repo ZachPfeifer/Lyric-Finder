@@ -18,7 +18,7 @@ class Lyrics extends Component {
         `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${this.props.match.params.id}&apikey=${process.env.REACT_APP_MM_KEY}`
       )
       .then(res => {
-        // console.log(res.data)
+        console.log(res.data)
         this.setState({ lyrics: res.data.message.body.lyrics });
 
         return axios.get(
@@ -28,7 +28,6 @@ class Lyrics extends Component {
       .then(res => {
         console.log(res.data);
         this.setState({ track: res.data.message.body.track })
-
       })
       .catch(err => {
         console.log(err)
@@ -38,6 +37,7 @@ class Lyrics extends Component {
   render() {
 
     const { track, lyrics } = this.state
+    console.log(track, lyrics);
 
     if (
       track === undefined ||

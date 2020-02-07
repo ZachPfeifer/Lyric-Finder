@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
-  function refreshPage() {
-    window.location.reload(false);
-  }
+  // function refreshPage() {
+  //   window.location.reload(false);
+  // }
 
   return (
     <nav className="navbar navbar-dark bg-dark mb-5 sticky-top">
@@ -14,7 +14,8 @@ const Navbar = () => {
         className="btn btn-dark btn-sm"
       >
         <i className="fas fa-home fa-2x"
-          onClick={refreshPage}></i>
+        ></i>
+        {/* onClick={refreshPage}> */}
       </Link>
       <span className="navbar-brand mb-0 h1 mx-auto">LyricFinder</span>
     </nav>
