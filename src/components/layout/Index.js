@@ -8,15 +8,15 @@ const Index = () => {
   return (
     <React.Fragment>
       <div className="row">
-        <div className="col-5">
-          <SearchByTrack />
+        {/* <div className="col-5 col-sm-12"> */}
+        <SearchByTrack />
+        {/* </div> */}
+        <div className="col-lg-1 col-md-2 col-sm-12 d-flex align-items-center mx-auto">
+          <h1 className="d-flex justify-content-center mx-auto"><strong> OR </strong> </h1>
         </div>
-        <div className="col-2 d-flex align-items-center">
-          <h1 className="d-flex justify-content-center mx-auto"><strong>OR</strong></h1>
-        </div>
-        <div className="col-5">
-          <SearchByLyrics />
-        </div>
+        {/* <div className="col-5 col-sm-12"> */}
+        <SearchByLyrics />
+        {/* </div> */}
       </div>
       <Tracks />
     </React.Fragment>
